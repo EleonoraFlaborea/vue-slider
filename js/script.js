@@ -31,7 +31,9 @@ const app = createApp ({
               name: "Skyrim",
               description: 'Epic Nordic fantasy with dragons and ancient magic.',
             }
-            ]
+            ],
+
+            currentIndex : 0,
         }
     }
 })
