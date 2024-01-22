@@ -33,21 +33,21 @@
   <div class="container" id="root">
     <div id="carousel">
       <!-- Prev button -->
-      <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button"></i>
+      <i v-if="!isFirstIndex" id="prev-button" class="bi bi-arrow-left-circle-fill" role="button" @click="currentIndex--"></i>
 
       <!-- Gallery -->
       <div class="gallery">
-        <figure v-for="photo in photos" class="active">
+        <figure v-for="(photo, i) in photos" v-show="currentIndex === i">
           <figcaption>
-            <h2>Svezia</h2>
-            <h3>Scandinavia's blend of nature and innovation.</h3>
+            <h2>{{photo.name}}</h2>
+            <h3>{{photo.description}}</h3>
           </figcaption>
           <img :src="`img/${photo.image}`" :alt="photo.name">
         </figure>
       </div>
 
       <!-- next button -->
-      <i id="next-button" class="bi bi-arrow-right-circle-fill" role="button"></i>
+      <i v-if="!isLastIndex" id="next-button" class="bi bi-arrow-right-circle-fill" role="button" @click="currentIndex++"></i>
     </div>
 
     <!-- Thumbnails -->

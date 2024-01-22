@@ -34,6 +34,13 @@ const app = createApp ({
             ],
 
             currentIndex : 0,
+        }},
+    computed:{
+        isFirstIndex(){
+            return this.currentIndex === 0;
+        },
+        isLastIndex(){
+            return this.currentIndex === this.photos.length - 1;
         }
     }
 })
