@@ -5,7 +5,7 @@ const {createApp} = Vue;
 const app = createApp ({
     data(){
         return{
-            posts:[
+            photos:[
             {
               image: '01.jpg',
               name: 'Svezia',
